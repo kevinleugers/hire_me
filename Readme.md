@@ -7,7 +7,9 @@ assigned.
 
 # Development Plans
 
-Using Rails and Mongodb to build the back end web app. Firstly building a
+- 1/11/15
+
+- Using Rails and Mongodb to build the back end web app. Firstly building a
 REST-ful API and use HTML forms to enter data. 
 
 - Next, to implement Angular.js on the front end to make a single-page dashboard
