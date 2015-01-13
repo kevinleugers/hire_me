@@ -1,0 +1,9 @@
+h1
+  |Active Jobs
+hr
+= link_to 'New Job', new_job_path, class: 'button round right'
+- @jobs.each do |job|
+  h3
+    = job.title
+  = job.description
+
