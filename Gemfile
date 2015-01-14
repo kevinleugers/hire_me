@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
+gem 'mongoid-tree'
 gem 'bson_ext'
 gem 'simple_form'
 gem 'slim-rails'
@@ -27,6 +28,7 @@ end
 group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :development, :test do

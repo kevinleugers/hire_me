@@ -10,7 +10,7 @@ nav.top-bar data-topbar="" data-options="is_hover: false" role="navigation"
         li
           = link_to 'Dashboard', dashboard_path
         li
-          = link_to 'Sign Out', destroy_user_session_path
+          = link_to 'Sign Out', destroy_user_session_path, method: :delete
       - else
         li
           = link_to 'Login', new_user_session_path

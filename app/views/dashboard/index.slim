@@ -1,5 +1,7 @@
+= page_title "dashboard"
 h1
-  |Active Jobs
+  |Active Jobs for
+  = " #{current_user.email}"
 hr
 = link_to 'New Job', new_job_path, class: 'button round right'
 - @jobs.each do |job|
