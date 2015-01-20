@@ -116,6 +116,10 @@ GEM
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     rack (1.5.2)
+    rack-contrib (1.2.0)
+      rack (>= 0.9.1)
+    rack-protection (1.5.3)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.2)
@@ -138,6 +142,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redis (3.2.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rspec-core (3.1.7)
@@ -171,6 +176,10 @@ GEM
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
     slim (3.0.1)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -181,6 +190,11 @@ GEM
       railties (>= 3.1, < 5.0)
       slim (~> 3.0)
     slop (3.6.0)
+    soulmate (1.1.0)
+      multi_json (>= 1.0)
+      redis (>= 3.0)
+      sinatra (>= 1.0)
+      vegas (>= 0.1.0)
     spring (1.2.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -205,6 +219,8 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    vegas (0.1.11)
+      rack (>= 1.0.0)
     warden (1.2.3)
       rack (>= 1.0)
     xpath (2.0.0)
@@ -227,6 +243,7 @@ DEPENDENCIES
   mongoid (~> 4)!
   mongoid-tree
   pry-rails
+  rack-contrib
   rails (= 4.1.2)
   rails-footnotes
   rspec-rails
@@ -235,6 +252,7 @@ DEPENDENCIES
   shoulda-matchers
   simple_form
   slim-rails
+  soulmate
   spring
   spring-commands-rspec
   uglifier (>= 1.3.0)

@@ -16,6 +16,8 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'devise'
 gem 'foundation-rails'
+gem 'rack-contrib'
+gem 'soulmate', :require => 'soulmate/server'
 
 group :development do
   gem 'spring'

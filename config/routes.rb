@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index', as: :dashboard
   resources :jobs
 
+  mount Soulmate::Server, :at => "/sm"
+
   root to: 'pages#home'
 end
