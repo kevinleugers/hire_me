@@ -4,6 +4,7 @@ class Job
 
   belongs_to :user
   belongs_to :company
+  has_and_belongs_to_many :skills
 
   field :title, :type => String
   field :description, :type => String
@@ -13,6 +14,7 @@ class Job
   field :relocation, :type => Boolean
 
   accepts_nested_attributes_for :company
+  accepts_nested_attributes_for :skills
 
   validates_presence_of :title, :description
 

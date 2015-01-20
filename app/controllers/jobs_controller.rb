@@ -7,6 +7,7 @@ class JobsController < ApplicationController
     @job = Job.new
     @job.company = Company.new
     @job.company.address = Address.new
+    @skills = []
   end
 
   def create
@@ -16,6 +17,12 @@ class JobsController < ApplicationController
     end
     @job = Job.new
     @job.update_attributes(job_params)
+    unless params[:job][:skill].blank?
+      @skill = Skill.new
+      @skill.name = params[:job][:skill][:name]
+      @skill.save
+      @job.skills << @skill
+    end
     if @job.valid?
       current_user.jobs << @job
       redirect_to dashboard_path

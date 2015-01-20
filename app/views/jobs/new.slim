@@ -5,6 +5,8 @@
   = f.input :posting_url
   = f.input :allows_remote, as: :boolean
   = f.input :relocation, as: :boolean
+  = f.fields_for :skill do |s|
+    =  s.input :name
   = f.fields_for :company do |c|
     = c.input :name, required: true
     = c.fields_for :address do |a|
