@@ -5,10 +5,17 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @job.company = Company.new
+    @job.company.address = Address.new
   end
 
   def create
-    @job = Job.create(job_params)
+    if job_params['company_attributes']['name'].blank?
+      redirect_to new_job_path(alert: 'Company Name cannot be blank')
+      return
+    end
+    @job = Job.new
+    @job.update_attributes(job_params)
     if @job.valid?
       current_user.jobs << @job
       redirect_to dashboard_path
@@ -22,7 +29,8 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(
       :title,
-      :description
+      :description,
+      company_attributes: [:name, address_attributes: [:city, :state]]
     )
   end
 end

@@ -1,4 +1,13 @@
-= simple_form_for @job do |f|
+= simple_form_for @job, data: {'abide' => ''} do |f|
   = f.input :title
   = f.input :description
+  = f.input :applied_date
+  = f.input :posting_url
+  = f.input :allows_remote, as: :boolean
+  = f.input :relocation, as: :boolean
+  = f.fields_for :company do |c|
+    = c.input :name, required: true
+    = c.fields_for :address do |a|
+      = a.input :city
+      = a.input :state
   = f.button :submit, value: 'Save', class: 'button radius'

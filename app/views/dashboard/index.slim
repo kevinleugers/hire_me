@@ -5,7 +5,12 @@ h1
 hr
 = link_to 'New Job', new_job_path, class: 'button round right'
 - @jobs.each do |job|
-  h3
-    = job.title
-  = job.description
+  .job
+    small
+      = "Applied on: " + job.applied_date.strftime('%m') if job.applied?
+    h3
+      - unless job.company.nil?
+        = job.company.name + " - "
+      = job.title
+    = job.description
 
