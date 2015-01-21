@@ -12,7 +12,27 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+  $('#search_input').autocomplete({
+    autoFocus: true,
+    source: function(request, response){
+      $.get("/sm/search?types[]=skill&limit=3", {
+        term: request.term
+      }, function(data) {
+        var terms = []
+        $.each(data.results.skill, function(i, result){
+          terms.push(result.term);
+        });
+        console.log(terms);
+        response(terms);
+      });
+    },
+    minLength: 2
+  });
+});
+

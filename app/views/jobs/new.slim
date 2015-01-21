@@ -1,3 +1,4 @@
+= text_field_tag 'search_input'
 = simple_form_for @job, data: {'abide' => ''} do |f|
   = f.input :title
   = f.input :description
@@ -13,3 +14,4 @@
       = a.input :city
       = a.input :state
   = f.button :submit, value: 'Save', class: 'button radius'
+
