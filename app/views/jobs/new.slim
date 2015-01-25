@@ -22,5 +22,6 @@
   h4
     |Notes
   hr
-  = f.input :notes
+  = f.input :notes, as: :hidden
+  #notes-field
   = f.button :submit, value: 'Save', class: 'button radius'

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require foundation
+//= require froala_editor.min.js
 //= require_tree .
 
 $(function(){
@@ -33,6 +34,7 @@ $(function(){
     },
     minLength: 2
   });
+  $('#notes-field').editable({inlineMode: false});
 });
 
 

@@ -18,6 +18,9 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'rack-contrib'
 gem 'soulmate', :require => 'soulmate/server'
+gem 'unicorn-rails'
+gem 'wysiwyg-rails'
+gem 'font-awesome-rails'
 
 group :development do
   gem 'spring'
