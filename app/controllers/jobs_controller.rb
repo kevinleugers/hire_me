@@ -37,6 +37,8 @@ class JobsController < ApplicationController
     params.require(:job).permit(
       :title,
       :description,
+      :posting_url,
+      :notes,
       company_attributes: [:name, address_attributes: [:city, :state]]
     )
   end

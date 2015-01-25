@@ -1,3 +1,10 @@
 {"id":1,"term":"ruby","score":85}
 {"id":2,"term":"rails","score":85}
 {"id":3,"term":"rake","score":85}
+{"id":4,"term":"javascript","score":85}
+{"id":5,"term":"html","score":85}
+{"id":6,"term":"css","score":85}
+{"id":7,"term":"sass","score":85}
+{"id":8,"term":"haml","score":85}
+{"id":9,"term":"python","score":85}
+{"id":10,"term":"java","score":85}

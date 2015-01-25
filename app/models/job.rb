@@ -12,6 +12,7 @@ class Job
   field :posting_url, :type => String
   field :allows_remote, :type => Boolean
   field :relocation, :type => Boolean
+  field :notes, :type => String
 
   accepts_nested_attributes_for :company
   accepts_nested_attributes_for :skills

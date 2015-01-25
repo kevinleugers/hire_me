@@ -1,5 +1,8 @@
 = text_field_tag 'search_input'
 = simple_form_for @job, data: {'abide' => ''} do |f|
+  h4
+    |Job
+  hr
   = f.input :title
   = f.input :description
   = f.input :applied_date
@@ -7,11 +10,17 @@
   = f.input :allows_remote, as: :boolean
   = f.input :relocation, as: :boolean
   = f.fields_for :skill do |s|
-    =  s.input :name
+    =  s.input :name, label: "Skill"
+  h4
+    |Company
+  hr
   = f.fields_for :company do |c|
     = c.input :name, required: true
     = c.fields_for :address do |a|
       = a.input :city
       = a.input :state
+  h4
+    |Notes
+  hr
+  = f.input :notes
   = f.button :submit, value: 'Save', class: 'button radius'
-

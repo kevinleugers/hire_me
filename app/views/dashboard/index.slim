@@ -3,14 +3,51 @@ h1
   |Active Jobs for
   = " #{current_user.email}"
 hr
-= link_to 'New Job', new_job_path, class: 'button round right'
-- @jobs.each do |job|
+.row
+  .small-3.large-offset-9.columns
+    .job-navigation
+      = link_to 'New Job', new_job_path, class: 'button round'
+- @jobs.each_with_index do |job, index|
   .job
     small
       = "Applied on: " + job.applied_date.strftime('%m') if job.applied?
-    h3
-      - unless job.company.nil?
-        = job.company.name + " - "
-      = job.title
-    = job.description
-
+    .row
+      .small-8.columns
+        .job-title
+          = job.title
+      .small-4.columns
+        .date-added
+          |Date Added: 
+          = job.created_at
+    .row
+      .small-8.columns
+        .company-name
+          - unless job.company.nil?
+            b
+              = job.company.name
+            = " - " + job.company.location
+      .small-4.columns
+        .posting-link
+          = link_to "Posting Link", job.posting_url
+    .row
+      .small-8.columns
+        .job-description
+          = job.description
+      .small-4.columns
+        .allows-remote-tag
+          = "Allows Remote" unless job.allows_remote.nil?
+        .relocation-tag
+          = "Relocation Offered" unless job.relocation.nil?
+    .row
+      .small-8.columns
+        ul.accordion data-accordion=""
+          li.accordion-navigation
+            a href="#panel1-#{index}"
+              |Notes
+            div id="panel1-#{index}" class="content"
+              = job.notes
+          li.accordion-navigation
+            a href="#panel2-#{index}"
+              |Stuff
+            div id="panel2-#{index}" class="content"
+              |More stuff

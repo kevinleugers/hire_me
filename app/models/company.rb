@@ -10,4 +10,8 @@ class Company
   field :name, type: String
 
   validates_presence_of :name
+
+  def location
+    address.city + ", " + address.state
+  end
 end

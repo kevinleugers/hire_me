@@ -17,7 +17,6 @@
 //= require_tree .
 
 $(function(){
-  $(document).foundation();
   $('#search_input').autocomplete({
     autoFocus: true,
     source: function(request, response){
@@ -36,3 +35,5 @@ $(function(){
   });
 });
 
+
+$(function(){ $(document).foundation(); });
