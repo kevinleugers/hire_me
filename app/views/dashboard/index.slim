@@ -45,9 +45,4 @@ hr
             a.notes-button href="#panel1-#{index}"
               |Notes
             div id="panel1-#{index}" class="content"
-              = job.notes
-          li.accordion-navigation
-            a href="#panel2-#{index}"
-              |Stuff
-            div id="panel2-#{index}" class="content"
-              |More stuff
+              = job.notes.html_safe unless job.notes.nil?

@@ -1,3 +1,18 @@
+production:
+  sessions:
+    default:
+      # The standard MongoDB connection URI allows for easy
+      #      # replica set connection setup.
+      #           # Use environment variables or a config file to keep your
+      #                # credentials safe e.g. .
+      uri: <%= ENV['MONGOLAB_URI'] %>
+      options:
+        max_retries: 30
+        retry_interval: 1
+        timeout: 15
+        refresh_interval: 10
+
+
 development:
   # Configure available database sessions. (required)
   sessions:

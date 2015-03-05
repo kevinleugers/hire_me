@@ -17,25 +17,4 @@
 //= require froala_editor.min.js
 //= require_tree .
 
-$(function(){
-  $('#search_input').autocomplete({
-    autoFocus: true,
-    source: function(request, response){
-      $.get("/sm/search?types[]=skill&limit=3", {
-        term: request.term
-      }, function(data) {
-        var terms = []
-        $.each(data.results.skill, function(i, result){
-          terms.push(result.term);
-        });
-        console.log(terms);
-        response(terms);
-      });
-    },
-    minLength: 2
-  });
-  $('#notes-field').editable({inlineMode: false});
-});
-
-
 $(function(){ $(document).foundation(); });
